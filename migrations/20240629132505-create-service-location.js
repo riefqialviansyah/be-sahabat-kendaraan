@@ -2,28 +2,46 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Users", {
+    await queryInterface.createTable("ServiceLocations", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      username: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
-      },
-      email: {
+      name: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        unique: true,
       },
-      password: {
-        type: Sequelize.STRING(20),
+      address: {
+        type: Sequelize.STRING(225),
         allowNull: false,
       },
-      role: {
+      city: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      state: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      zipCode: {
+        type: Sequelize.STRING(15),
+        allowNull: false,
+      },
+      description: {
+        type: Sequelize.TEXT,
+      },
+      roleAdd: {
         type: Sequelize.ENUM("admin", "user"),
+        allowNull: false,
+      },
+      UserId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id",
+        },
         allowNull: false,
       },
       createdAt: {
@@ -37,6 +55,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Users");
+    await queryInterface.dropTable("ServiceLocations");
   },
 };

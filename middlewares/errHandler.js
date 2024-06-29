@@ -9,6 +9,10 @@ const errHandler = (err, req, res, next) => {
       res.status(400).json({ message: err.errors[0].message });
       break;
 
+    case "BadRequest":
+      res.status(400).json({ message: err.message });
+      break;
+
     case "NotFound":
       res.status(400).json({ message: err.message });
       break;

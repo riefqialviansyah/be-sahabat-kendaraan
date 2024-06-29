@@ -5,9 +5,14 @@ const { generateToken } = require("../helpers/jwt");
 class UserController {
   static async register(req, res, next) {
     try {
-      const { username, email, password } = req.body;
+      const { username, email, password, role } = req.body;
 
-      const newUser = await User.create({ username, email, password });
+      const newUser = await User.create({
+        username,
+        email,
+        password,
+        role,
+      });
 
       res.status(201).json({
         message: "Success create user",
@@ -23,7 +28,7 @@ class UserController {
       const { email, password } = req.body;
 
       if (!email || !password) {
-        throw { name: "Unauthorized", message: "Incorrect email or password" };
+        throw { name: "BadRequest", message: "Email and password require" };
       }
 
       const user = await User.findOne({

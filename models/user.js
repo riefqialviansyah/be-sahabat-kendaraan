@@ -17,18 +17,20 @@ module.exports = (sequelize, DataTypes) => {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: { msg: "Username already used" },
         validate: {
           notNull: { msg: "Username is require" },
-          notNull: { msg: "Username is require" },
+          notEmpty: { msg: "Username is require" },
         },
       },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: {
+          msg: "Email already used",
+        },
         validate: {
           notNull: { msg: "Email is require" },
-          notNull: { msg: "Email is require" },
+          notEmpty: { msg: "Email is require" },
           isEmail: { msg: "Not valid email format" },
         },
       },
@@ -39,6 +41,18 @@ module.exports = (sequelize, DataTypes) => {
           notNull: { msg: "Password is require" },
           notEmpty: { msg: "Password is require" },
           len: { args: 6, msg: "Password length atleast 6 char" },
+        },
+      },
+      role: {
+        type: DataTypes.ENUM("admin", "user"),
+        allowNull: false,
+        validate: {
+          isIn: {
+            args: [["user", "admin"]],
+            msg: "Role must be user or admin",
+          },
+          notNull: { msg: "Role is require" },
+          notEmpty: { msg: "Role is require" },
         },
       },
     },

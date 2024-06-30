@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Motor",
+    "roleAdd": "admin",
+    "UserId": 1
+  },
+  {
+    "name": "Mobil",
+    "roleAdd": "admin",
+    "UserId": 1
+  },
+  {
+    "name": "Elf",
+    "roleAdd": "admin",
+    "UserId": 1
+  },
+  {
+    "name": "Bus",
+    "roleAdd": "admin",
+    "UserId": 1
+  },
+  {
+    "name": "Truck",
+    "roleAdd": "admin",
+    "UserId": 1
+  }
+]

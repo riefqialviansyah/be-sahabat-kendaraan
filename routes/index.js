@@ -12,4 +12,8 @@ router.get("/", (req, res) => {
 
 router.use("/user", require("./userRoute"));
 
+router.use(require("../middlewares/auth"));
+router.use("/category", require("./categoryRoute"));
+router.use("/service-location", require("./serviceLocationRoute"));
+
 module.exports = router;

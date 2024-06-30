@@ -1,17 +1,5 @@
 [
   {
-    "username": "user1",
-    "email": "user1@mail.com",
-    "role": "user",
-    "password": "123456"
-  },
-  {
-    "username": "user2",
-    "email": "user2@mail.com",
-    "role": "user",
-    "password": "123456"
-  },
-  {
     "username": "admin1",
     "email": "admin1@mail.com",
     "role": "admin",
@@ -21,6 +9,18 @@
     "username": "admin2",
     "email": "admin2@mail.com",
     "role": "admin",
+    "password": "123456"
+  },
+  {
+    "username": "user1",
+    "email": "user1@mail.com",
+    "role": "user",
+    "password": "123456"
+  },
+  {
+    "username": "user2",
+    "email": "user2@mail.com",
+    "role": "user",
     "password": "123456"
   }
 ]

@@ -14,7 +14,7 @@ const errHandler = (err, req, res, next) => {
       break;
 
     case "NotFound":
-      res.status(400).json({ message: err.message });
+      res.status(404).json({ message: err.message });
       break;
 
     default:

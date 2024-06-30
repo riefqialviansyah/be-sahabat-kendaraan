@@ -15,5 +15,7 @@ router.use("/user", require("./userRoute"));
 router.use(require("../middlewares/auth"));
 router.use("/category", require("./categoryRoute"));
 router.use("/service-location", require("./serviceLocationRoute"));
+router.use("/vehicle", require("./vehicleRoute"));
+router.use("/service-record", require("./serviceRecordRoute"));
 
 module.exports = router;

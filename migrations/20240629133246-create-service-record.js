@@ -29,6 +29,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      note: {
+        type: Sequelize.TEXT,
+      },
+      isDelete: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+        allowNull: false,
+      },
       ServiceLocationId: {
         type: Sequelize.INTEGER,
         references: {

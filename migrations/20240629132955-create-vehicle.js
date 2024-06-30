@@ -30,7 +30,7 @@ module.exports = {
         allowNull: false,
       },
       year: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING(4),
         allowNull: false,
       },
       regNumber: {
@@ -40,6 +40,11 @@ module.exports = {
       ownerName: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      isDelete: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
